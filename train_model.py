@@ -1,7 +1,4 @@
-"""Reproduit le pipeline du notebook et sauvegarde le modèle SVM optimisé.
-
-Usage :
-    python train_model.py --csv winequality-white.csv
+"""Reproduit le pipeline du notebook et sauvegarde le modèle SVM optimisé
 """
 import argparse
 
@@ -30,9 +27,6 @@ def main():
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.25, random_state=42, stratify=y
     )
-
-    # Hyperparamètres trouvés par GridSearchCV dans le notebook (F1 en validation croisée).
-    # Le scaler n'est ajusté que sur l'entraînement.
     model = make_pipeline(
         StandardScaler(),
         SVC(kernel="rbf", C=1, gamma=0.1, probability=True, class_weight="balanced", random_state=42),
