@@ -1,9 +1,8 @@
-"""Application web : prédit si un vin blanc est bon à partir de ses mesures."""
+"""Application web : prédit si un vin blanc est bon à partir de ses mesures"""
 import streamlit as st
 
 from wine_model import MODEL_PATH, load_model, predict_wine
 
-# (variable, libellé, min, max, valeur par défaut, pas)
 SLIDERS = [
     ("fixed acidity", "Acidité fixe (g/L)", 3.8, 14.2, 6.9, 0.1),
     ("volatile acidity", "Acidité volatile (g/L)", 0.08, 1.1, 0.28, 0.01),
